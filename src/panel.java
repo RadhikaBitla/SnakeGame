@@ -82,8 +82,7 @@ public class panel extends JPanel implements ActionListener
                 graphics.fillOval(fx,fy,70,70);
                 treasure=true;
             }
-            else
-            {
+            else {
                 graphics.setColor(Color.ORANGE);
                 graphics.fillOval(fx, fy, 50, 50);
             }
@@ -94,7 +93,7 @@ public class panel extends JPanel implements ActionListener
                 if(i==0)
                 {
                     graphics.setColor(Color.RED);
-                    graphics.fillRect(xsnake[0],ysnake[0],unit,unit);
+                   graphics.fillRect(xsnake[0],ysnake[0],unit,unit);
                 }
                 else
                 {
@@ -150,19 +149,19 @@ public class panel extends JPanel implements ActionListener
 
         if(xsnake[0]>width)
         {
-            flag=false;
+            xsnake[0]=0;
         }
         else if(xsnake[0]<0)
         {
-            flag=false;
+            xsnake[0]=1200;
         }
         else if(ysnake[0]>height)
         {
-            flag=false;
+            ysnake[0]=0;
         }
         else if(ysnake[0]<0)
         {
-            flag=false;
+            ysnake[0]=600;
         }
 
         if(flag==false) {
@@ -201,11 +200,11 @@ public class panel extends JPanel implements ActionListener
         graphics.drawString("Game Over",(width- fontMetrics1.stringWidth("Game Over"))/2,graphics.getFont().getSize());
 
         FontMetrics fontMetrics2= getFontMetrics(graphics.getFont());
-        graphics.drawString("Press 'R' to Replay: ",(width- fontMetrics2.stringWidth("Press 'R' to Replay : "))/2,(height+200)/2);
-        graphics.drawString("Press 'S' to Replay: ",(width- fontMetrics2.stringWidth("Press 'R' to Replay : "))/2,(height+300)/2);
-
+        graphics.drawString("Press 'R' to REPLAY",(width- fontMetrics2.stringWidth("Press 'R' to Replay: "))/2,(height+200)/2);
+        graphics.drawString("Press 'S' to SAVE Score",(width- fontMetrics2.stringWidth("Press 'S' to Save Score: "))/2,(height+300)/2);
         Scores scores=new Scores();
         int highestScore=scores.HighestScore();
+
         if(score>highestScore)
         {
             graphics.setColor(Color.GREEN);
@@ -213,6 +212,7 @@ public class panel extends JPanel implements ActionListener
             FontMetrics fontMetrics3= getFontMetrics(graphics.getFont());
             graphics.drawString("Congratulations... ",(width- fontMetrics3.stringWidth("Congratualation... "))/2,graphics.getFont().getSize()+50);
         }
+
         graphics.setColor(Color.BLACK);
         FontMetrics fontMetrics3= getFontMetrics(graphics.getFont());
         graphics.drawString("Highest Score : "+highestScore,(width- fontMetrics3.stringWidth("Highest Score : "+highestScore))/2,graphics.getFont().getSize()+150);
