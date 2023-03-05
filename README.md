@@ -1,13 +1,13 @@
 # SnakeGame
 
-  This Snake Game works as a traditional snake game we used to play as kids when the keypad phones were popular.
+  This Application works as a traditional Snake_Game we used to play as kids when the keypad phones were popular.
   
   The functions of this project are:
   1) Eat food particle (5 points)
   2) Eat treasure particle (20 points)
   3) Moving left, right, up, down using Key Actions and Event Handlers
   4) Saving the result of the game, by taking user name as input.
-  5) Showing highscore so fast stored in database.
+  5) Showing highest score present in database.
   6) If current player score is greater than highest score so far, The application congratulates user.
   7) Upon game ending, we can 
     i) press 'R' to replay the game.
